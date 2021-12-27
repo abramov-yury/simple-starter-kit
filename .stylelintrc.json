@@ -1,0 +1,7 @@
+{
+  "extends": "stylelint-config-recommended",
+  "customSyntax": "postcss-sass",
+  "rules": {
+    "string-quotes": "double"
+  }
+}

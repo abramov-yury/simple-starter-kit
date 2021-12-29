@@ -1,4 +1,4 @@
-const config = require(`./webpack.config.js`);
+const {config} = require(`./webpack.config.js`);
 const styles = require(`./modules/css_dev.js`);
 
 config.mode = `development`;

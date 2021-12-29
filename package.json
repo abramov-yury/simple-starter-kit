@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "description": "Basic configuration of Webpack",
-  "author:": "azesmdev",
+  "author:": "",
   "license": "MIT",
   "scripts": {
     "eslint": "eslint src/**/*.js",
     "build": "webpack --config webpack/prod.config.js",
-    "start": "webpack serve --config webpack/dev.config.js"
+    "start": "webpack serve --config webpack/dev.config.js",
+    "server": "npx http-server"
   },
   "devDependencies": {
     "@babel/core": "^7.16.5",

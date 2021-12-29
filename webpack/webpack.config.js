@@ -1,7 +1,7 @@
 const fs = require(`fs`);
 const path = require(`path`);
 const html = require(`./modules/html.js`);
-const copy = require(`./modules/copy.js`);
+
 const pugRules = require(`./modules/pug.js`);
 const babelRules = require(`./modules/babel.js`);
 const imagesRules = require(`./modules/images.js`);
@@ -26,6 +26,10 @@ const getPagesNames = () => {
 const pagesNames = getPagesNames();
 
 const config = {
+  performance: {
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000
+  },
   entry: new function () {
     for(let item of pagesNames) {
       this[item] = `${dirWithPages}/${item}/${item}.js`;
@@ -35,9 +39,7 @@ const config = {
     filename: `js/[name].js`,
     path: `${PATHS.public}`,
   },
-  plugins: [ // the objects
-    copy(PATHS.source, PATHS.public),
-  ].concat( // the arrays
+  plugins: [/* the objects */].concat( // the arrays
     html(pagesNames, dirWithPages),
   ),
   module: {
@@ -45,4 +47,7 @@ const config = {
   },
 };
 
-module.exports = config;
+module.exports = {
+  config: config,
+  paths: PATHS
+};

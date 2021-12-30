@@ -4,13 +4,13 @@ module.exports = (path_from, path_to) => {
   return new CopyPlugin({
     patterns: [
       {
-        from: `${path_from}/base/manifest.json`,
+        from: `${path_from}/assets/manifest.json`,
         to: `${path_to}`,
         toType: `dir`,
       },
       {
-        from: `${path_from}/base/favicon/img/`,
-        to: `${path_to}/img/favicon`,
+        from: `${path_from}/assets/img/`,
+        to: `${path_to}/img`,
         toType: `dir`,
       }
     ]

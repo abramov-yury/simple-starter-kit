@@ -1,2 +1,2 @@
 //styles
-import './index.sass';
+import "./index.sass";

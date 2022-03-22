@@ -1,10 +1,14 @@
-extends ../../template/base
+extends ../../template/page
+include ../../template/page-header
+include ../../template/page-main
+include ../../template/page-footer
 
 block variables
-  - title = "Main page"
+  - title = "Page name"
 
 block header
-
+  +page-header
 block main
-
+  +page-main
 block footer
+  +page-footer

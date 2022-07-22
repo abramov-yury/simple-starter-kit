@@ -1,2 +1,7 @@
-mixin page-footer(cls="")
-  footer(class=`${cls} page-footer`)
+mixin page-footer(parent)
+
+  -
+    name = "footer"
+    cls = parent ? `${parent}__${name} ${name}` : name
+
+  footer(class=cls)

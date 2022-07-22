@@ -1,2 +1,7 @@
-mixin page-header(cls="")
-  header(class=`${cls} page-header`)
+mixin page-header(parent)
+
+  -
+    name = "header"
+    cls = parent ? `${parent}__${name} ${name}` : name
+
+  header(class=cls)

@@ -1,7 +1,7 @@
 module.exports = {
   test: /\.(jpe?g|png|svg|webp|ico)$/,
-  type: "asset/resource",
+  type: 'asset/resource',
   generator: {
-    filename: "img/[name][ext]"
+    filename: 'img/[name][ext]'
   }
 }

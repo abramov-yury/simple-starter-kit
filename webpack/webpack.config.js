@@ -1,24 +1,24 @@
-const fs = require("fs");
-const path = require("path");
-const html = require("./modules/html.js");
+const fs = require('fs');
+const path = require('path');
+const html = require('./modules/html.js');
 
-const pugRules = require("./modules/pug.js");
-const babelRules = require("./modules/babel.js");
-const imagesRules = require("./modules/images.js");
-const fontsRules = require("./modules/fonts.js");
+const pugRules = require('./modules/pug.js');
+const babelRules = require('./modules/babel.js');
+const imagesRules = require('./modules/images.js');
+const fontsRules = require('./modules/fonts.js');
 
 const PATHS = {
-  source: path.join(__dirname, "../src"),
-  public: path.join(__dirname, "../public"),
+  source: path.join(__dirname, '../src'),
+  public: path.join(__dirname, '../public'),
 };
 
 const dirWithPages = `${PATHS.source}/pages`;
 
 const getPagesNames = () => {
   return fs.readdirSync(dirWithPages).map(page => {
-    const pathToDataFile = path.join(`${dirWithPages}/${page}`, "data.json");
-    const entryPoint = JSON.parse(fs.readFileSync(pathToDataFile, "utf-8"))["name"];
-    if(!entryPoint) throw new Error(`В pages/${page}/data.json отсутствует свойство - "name"...!`);
+    const pathToDataFile = path.join(`${dirWithPages}/${page}`, 'data.json');
+    const entryPoint = JSON.parse(fs.readFileSync(pathToDataFile, 'utf-8'))['name'];
+    if(!entryPoint) throw new Error(`В pages/${page}/data.json отсутствует свойство - 'name'...!`);
     return entryPoint;
   });
 };
@@ -36,7 +36,7 @@ const config = {
     }
   },
   output: {
-    filename: "js/[name].js",
+    filename: 'js/[name].js',
     path: `${PATHS.public}`,
   },
   plugins: [/* the objects */].concat( // the arrays
@@ -49,5 +49,6 @@ const config = {
 
 module.exports = {
   config: config,
-  paths: PATHS
+  paths: PATHS,
 };
+

@@ -1,10 +1,10 @@
-const TerserPlugin = require("terser-webpack-plugin");
-const {config, paths} = require("./webpack.config.js");
-const styles = require("./modules/css_prod.js");
-const cleaning = require("./modules/cleaning.js");
-const copy = require("./modules/copy.js");
+const TerserPlugin = require('terser-webpack-plugin');
+const {config, paths} = require('./webpack.config.js');
+const styles = require('./modules/css_prod.js');
+const cleaning = require('./modules/cleaning.js');
+const copy = require('./modules/copy.js');
 
-config.mode = "production";
+config.mode = 'production';
 config.plugins.push(
   styles.miniCssExtractPlugin,
   cleaning.cleanWebpackPlugin,

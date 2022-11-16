@@ -16,9 +16,9 @@ const dirWithPages = `${PATHS.source}/pages`;
 
 const getPagesNames = () => fs.readdirSync(dirWithPages).map((page) => {
 
-  const pathToDataFile = path.join(`${dirWithPages}/${page}`, "data.json");
+  const pathToDataFile = path.join(`${dirWithPages}/${page}`, `${page}.json`);
   const entryPoint = JSON.parse(fs.readFileSync(pathToDataFile, "utf-8")).name;
-  if (!entryPoint) throw new Error(`В pages/${page}/data.json отсутствует свойство - 'name'...!`);
+  if (!entryPoint) throw new Error(`В pages/${page}/${page}.json отсутствует свойство - 'name'...!`);
   return entryPoint;
 
 });

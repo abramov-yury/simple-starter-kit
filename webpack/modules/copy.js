@@ -1,15 +1,15 @@
 const CopyPlugin = require("copy-webpack-plugin");
 
-module.exports = (path_from, path_to) => new CopyPlugin({
+module.exports = (pathFrom, pathTo) => new CopyPlugin({
   patterns: [
     {
-      from: `${path_from}/assets/manifest.json`,
-      to: `${path_to}`,
+      from: `${pathFrom}/assets/manifest.json`,
+      to: `${pathTo}`,
       toType: "dir",
     },
     {
-      from: `${path_from}/assets/img/`,
-      to: `${path_to}/img`,
+      from: `${pathFrom}/assets/img/`,
+      to: `${pathTo}/img`,
       toType: "dir",
     },
   ],

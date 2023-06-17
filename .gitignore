@@ -10,6 +10,7 @@ Thumbs.db
 # Вспомогательные файлы
 *.log*
 *.webpack-temp*
+*.lock
 node_modules/
 
 #Директории проекта
